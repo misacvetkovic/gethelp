@@ -1,0 +1,44 @@
+/* Some Simple CSS */
+
+#footer {
+        width: 100%;
+        margin-top: 55px;
+        background: #414A52;
+	    border-top: 1px solid #d4d4d4;
+	    -webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8) inset, 0px -15px 15px rgba(255, 255, 255, 0.6);
+	       -moz-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8) inset, 0px -15px 15px rgba(255, 255, 255, 0.6);
+	    		box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8) inset, 0px -15px 15px rgba(255, 255, 255, 0.6);
+	    color: #626262;
+    }
+#footer .text-muted { 
+	margin: 20px 0; 
+	color: #ebebeb;
+}
+
+.btn-create-post { margin-top: 25px; }
+
+.form-control { margin-bottom: 15px; }
+
+.btn-create,
+.btn-mt { margin-top: 17px; }
+
+.btn-mt-lg { margin-top: 27px; }
+
+.article-title { 
+	margin-bottom: 35px; 
+	text-align: center;
+}
+
+.article-wrapp {
+	border: 1px solid #ddd;
+	margin-bottom: 25px;
+	padding: 25px;
+}
+
+.article-wrapp h2 { margin: 0; }
+
+.navbar-default { 
+	border-radius: 0; 
+	border-right: none;
+	border-left: none;
+}
