@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <!-- Custom Style -->
-<link rel="stylesheet" href="<?php $__ROOT__ ?>/css/style.css">
+<!-- <link rel="stylesheet" href="<?php $__ROOT__ ?>/css/style.css"> -->
 {{ Html::style('css/style.css') }}
 
 
