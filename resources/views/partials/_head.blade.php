@@ -7,10 +7,12 @@
 
 <!-- Bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
 <!-- Custom Style -->
 <!-- <link rel="stylesheet" href="<?php $__ROOT__ ?>/css/style.css"> -->
 {{ Html::style('css/style.css') }}
+
 
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

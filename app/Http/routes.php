@@ -53,5 +53,8 @@ Route::group(['middleware' => ['web']], function () {
 	// Post Routes
 	Route::resource('posts', 'PostController');
 
+	//Profile Routes
+	Route::get('profile', 'UserController@getProfile');
+	Route::post('profile', 'UserController@updateAvatar');
     
 });

@@ -27,20 +27,21 @@
                 @if (Auth::check())
 
                 <li class="dropdown">
-                    <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+                    <a style="position: relative; padding-left: 50px;" href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a> <img class="img-circle avatar-nav-img" src="/uploads/avatars/{{ Auth::user()->avatar }}" alt="">
                     <ul class="dropdown-menu">
-                        <li><a href="/">View Site</a></li>
+                        <li><a href="/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> View Site</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="{{ route('posts.index') }}">Dashboard</a></li>
-                        <li><a href="{{ route('categories.index') }}">Categories</a></li>
+                        <li><a href="{{ route('posts.index') }}"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
+                        <li><a href="{{ route('categories.index') }}"><i class="fa fa-tags" aria-hidden="true"></i> Categories</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="{{ route('logout') }}">Logout</a></li>
+                        <li><a href="{{ url('/profile') }}"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                        <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                     </ul>
                 </li>
 
                 @else
                 
-                <a class="btn btn-default btn-success navbar-btn" href="{{ route('login') }}">Login</a>
+                <a class="btn btn-default btn-success navbar-btn" href="{{ route('login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
                 
                 @endif
 
