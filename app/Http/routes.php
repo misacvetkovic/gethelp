@@ -40,6 +40,9 @@ Route::group(['middleware' => ['web']], function () {
 
 	// Categories
 	Route::resource('categories', 'CategoryController', ['except' => ['create']]);
+
+		// Categories
+	Route::resource('tags', 'TagController', ['except' => ['create']]);
 	
 	// Blog Routes
 	Route::get('blog', ['as' => 'blog.index', 'uses' => 'BlogController@getIndex']);

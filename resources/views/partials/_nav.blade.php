@@ -33,6 +33,7 @@
                         <li role="separator" class="divider"></li>
                         <li><a href="{{ route('posts.index') }}"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
                         <li><a href="{{ route('categories.index') }}"><i class="fa fa-tags" aria-hidden="true"></i> Categories</a></li>
+                        <li><a href="{{ route('tags.index') }}"><i class="fa fa-tags" aria-hidden="true"></i> Tags</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="{{ url('/profile') }}"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
                         <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
