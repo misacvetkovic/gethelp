@@ -2,6 +2,12 @@
 
 @section('title', '| Edit Blog Post')
 
+@section('stylesheets')
+
+	{!! Html::style('css/select2.min.css') !!}
+
+@endsection
+
 @section('content')
 
 	<div class="row">
@@ -22,9 +28,16 @@
 				{{ Form::hidden('featured_post', 0) }}
 				{{ Form::checkbox('featured_post', 1) }}
 			</div>
+			
+			<div class="form-group">
+				{{ Form::label('category_id', 'Category:') }}
+				{{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
+			</div>
 
-			{{ Form::label('category_id', 'Category:') }}
-			{{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
+			<div class="form-group">
+				{{ Form::label('tags', 'Tags') }}
+				{{ Form::select('tags[]', $tags, null, ['class' => 'form-control select2-multi', 'multiple' => 'multiple']) }}
+			</div>
 			
 			{{ Form::label('body', 'Post Body:') }}
 			{{ Form::textarea('body',null, ['class' => 'form-control']) }}
@@ -73,11 +86,21 @@
 
 @section('scripts')
 
+	{!! Html::script('js/select2.min.js') !!}
+
 	<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
 	<script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
 	<script>
 		$('textarea').ckeditor();
 		// $('.textarea').ckeditor(); // if class is prefered.
+	</script>
+
+	<script>
+
+		$('.select2-multi').select2();
+
+		$('.select2-multi').select2().val({!! json_encode($post->tags()->getRelatedIds()) !!}).trigger('change');
+
 	</script>
 
 @stop

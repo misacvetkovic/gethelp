@@ -5,6 +5,7 @@
 @section('stylesheets')
 
 	{!! Html::style('css/parsley.css') !!}
+	{!! Html::style('css/select2.min.css') !!}
 
 @endsection
 
@@ -30,22 +31,37 @@
 					{{ Form::hidden('featured_post', 0) }}
 					{{ Form::checkbox('featured_post', 1) }}
 				</div>
+				
+				<div class="form-group"> 
+					{{ Form::label('category_id', 'Category:') }}
+					<select class="form-control" name="category_id">
+						
+						@foreach($categories as $category)
 
-				{{ Form::label('category_id', 'Category:') }}
-				<select class="form-control" name="category_id">
-					
-					@foreach($categories as $category)
+							<option value="{{ $category->id }}">{{ $category->name }}</option>
 
-						<option value="{{ $category->id }}">{{ $category->name }}</option>
+						@endforeach
 
-					@endforeach
+					</select>
+				</div>
+				
+				<div class="form-group"> 
+					{{ Form::label('tags', 'Tags:') }}
+					<select class="form-control select2-multi" name="tags[]" multiple="multiple">
+						
+						@foreach($tags as $tag)
 
-				</select>
+							<option value="{{ $tag->id }}">{{ $tag->name }}</option>
 
-    			{{ Form::label('body', 'Post Body:') }}
-    			{{ Form::textarea('body', null, array('class' => 'form-control', 'required' => '')) }}
+						@endforeach
 
-    			{{ Form::submit('Create Post', array('class' => 'btn btn-success btn-lg btn-block btn-create-post')) }}
+					</select>
+				</div>
+
+  			{{ Form::label('body', 'Post Body:') }}
+  			{{ Form::textarea('body', null, array('class' => 'form-control', 'required' => '')) }}
+
+  			{{ Form::submit('Create Post', array('class' => 'btn btn-success btn-lg btn-block btn-create-post')) }}
 			{!! Form::close() !!}
 
 		</div>
@@ -56,12 +72,17 @@
 @section('scripts')
 
 	{!! Html::script('js/parsley.min.js') !!}
+	{!! Html::script('js/select2.min.js') !!}
 
 	<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
 	<script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
 	<script>
 		$('textarea').ckeditor();
 		// $('.textarea').ckeditor(); // if class is prefered.
+	</script>
+
+	<script>
+		$('.select2-multi').select2();
 	</script>
 
 @endsection
